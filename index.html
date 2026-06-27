@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>平顶山市第一高级中学 · 白龟湖畔新篇章</title>
+  <meta name="description" content="平顶山市第一高级中学——白龟湖畔现代化新校区，1961年建校，河南省首批示范性高中，六年一贯制公办寄宿制中学。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23B22222'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23DAA520' font-weight='bold'%3E高%3C/text%3E%3C/svg%3E">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      background: #faf7f2;
+      color: #2c2c2c;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== Color Tokens ===== */
+    :root {
+      --red: #B22222;
+      --red-dark: #8B1A1A;
+      --red-light: #C0392B;
+      --gold: #DAA520;
+      --gold-light: #F0D080;
+      --gold-dark: #B8860B;
+      --cream: #faf7f2;
+      --cream-dark: #f0e8d8;
+      --text: #2c2c2c;
+      --text-light: #666;
+      --white: #fff;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 32px rgba(0,0,0,0.14);
+      --radius: 12px;
+    }
+
+    /* ===== Scrollbar ===== */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
+
+    /* ===== Scroll Reveal ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== Header / Navigation ===== */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--gold);
+      transition: transform 0.3s ease;
+    }
+    .header.hidden { transform: translateY(-100%); }
+    .nav {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.05rem; font-weight: 700; color: var(--red);
+    }
+    .nav-logo .crest {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1rem; font-weight: 900;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+    .nav-links a {
+      padding: 6px 14px;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--text); border-radius: 20px;
+      transition: all 0.25s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { background: var(--red); color: var(--white); }
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 1.5rem; color: var(--red); cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(255,255,255,0.98); flex-direction: column;
+        padding: 16px 24px; border-bottom: 2px solid var(--gold);
+        gap: 4px;
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+    }
+
+    /* ===== Section Common ===== */
+    .section {
+      padding: 100px 24px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem; font-weight: 800;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      text-align: center;
+      font-size: 1rem; color: var(--text-light);
+      margin-bottom: 48px;
+    }
+    .section-title::after {
+      content: '';
+      display: block; width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+      margin: 12px auto 0; border-radius: 2px;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 40%, #6B1A1A 100%);
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      padding: 100px 24px 80px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(218,165,32,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(255,215,0,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-particles {
+      position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+    }
+    .hero-particles span {
+      position: absolute; display: block;
+      width: 4px; height: 4px;
+      background: rgba(218,165,32,0.3); border-radius: 50%;
+      animation: float-up linear infinite;
+    }
+    @keyframes float-up {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; color: var(--white);
+      max-width: 800px;
+    }
+    .hero-crest {
+      width: 88px; height: 88px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem; font-weight: 900; color: var(--red-dark);
+      box-shadow: 0 0 0 4px rgba(218,165,32,0.3), 0 8px 32px rgba(0,0,0,0.2);
+      animation: crest-pulse 3s ease-in-out infinite;
+    }
+    @keyframes crest-pulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(218,165,32,0.3), 0 8px 32px rgba(0,0,0,0.2); }
+      50% { box-shadow: 0 0 0 8px rgba(218,165,32,0.15), 0 8px 40px rgba(0,0,0,0.25); }
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900; letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .hero .motto {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--gold-light); letter-spacing: 6px;
+      margin-bottom: 20px; font-weight: 500;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(218,165,32,0.15);
+      border: 1px solid rgba(218,165,32,0.3);
+      padding: 8px 20px; border-radius: 20px;
+      font-size: 0.85rem; color: var(--gold-light);
+      margin-bottom: 28px;
+    }
+    .hero p {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      opacity: 0.9; line-height: 1.9;
+      max-width: 680px; margin: 0 auto;
+    }
+    .hero-scroll {
+      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.6);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      font-size: 0.8rem; letter-spacing: 2px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+    .hero-scroll .arrow { font-size: 1.2rem; }
+
+    /* ===== Timeline ===== */
+    .timeline {
+      position: relative; padding: 20px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 3px; background: linear-gradient(to bottom, var(--red), var(--gold), var(--red));
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 32px;
+      width: 50%; padding: 0 40px;
+      transition: all 0.3s;
+    }
+    .timeline-item:nth-child(odd) {
+      left: 0; text-align: right;
+    }
+    .timeline-item:nth-child(even) {
+      left: 50%; text-align: left;
+    }
+    .timeline-item .dot {
+      position: absolute; top: 20px;
+      width: 20px; height: 20px;
+      background: var(--red); border: 4px solid var(--gold);
+      border-radius: 50%;
+      transition: all 0.3s;
+      z-index: 2;
+    }
+    .timeline-item:nth-child(odd) .dot { right: -10px; }
+    .timeline-item:nth-child(even) .dot { left: -10px; }
+    .timeline-item .card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 20px 28px;
+      box-shadow: var(--shadow);
+      transition: all 0.35s;
+      border-left: 4px solid var(--red);
+      cursor: default;
+    }
+    .timeline-item:nth-child(even) .card { border-left: 4px solid var(--gold); border-right: none; }
+    .timeline-item .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+    .timeline-item.highlight .card {
+      border-left-color: var(--gold);
+      background: linear-gradient(135deg, #fff 60%, #fdf6e3);
+    }
+    .timeline-item .year {
+      font-size: 1.3rem; font-weight: 800; color: var(--red);
+      margin-bottom: 4px;
+    }
+    .timeline-item .title {
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 6px;
+    }
+    .timeline-item .desc {
+      font-size: 0.88rem; color: var(--text-light); line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before { left: 20px; }
+      .timeline-item { width: 100%; padding: 0 0 0 52px; text-align: left !important; }
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) { left: 0; }
+      .timeline-item .dot { left: 12px !important; right: auto !important; }
+      .timeline-item:nth-child(odd) .card { border-left: 4px solid var(--red) !important; }
+      .timeline-item:nth-child(even) .card { border-left: 4px solid var(--gold) !important; }
+    }
+
+    /* ===== Campus Compare ===== */
+    .campus-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    }
+    .campus-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 36px 32px; box-shadow: var(--shadow);
+      transition: all 0.35s;
+    }
+    .campus-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+    .campus-card.old {
+      border-top: 4px solid #999;
+      opacity: 0.75;
+    }
+    .campus-card.new {
+      border-top: 4px solid var(--gold);
+      background: linear-gradient(135deg, #fff 60%, #fdf6e3);
+    }
+    .campus-card .badge {
+      display: inline-block; padding: 4px 14px; border-radius: 12px;
+      font-size: 0.8rem; font-weight: 700; margin-bottom: 12px;
+    }
+    .campus-card.old .badge { background: #e0e0e0; color: #666; }
+    .campus-card.new .badge { background: var(--gold); color: var(--white); }
+    .campus-card h3 { font-size: 1.3rem; margin-bottom: 16px; color: var(--red); }
+    .campus-card ul li {
+      position: relative; padding: 6px 0 6px 22px;
+      font-size: 0.92rem; color: var(--text-light);
+    }
+    .campus-card ul li::before {
+      content: '✓'; position: absolute; left: 0;
+      color: var(--gold-dark); font-weight: 700;
+    }
+    .campus-card.new ul li::before { color: var(--gold-dark); }
+    .campus-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      margin-top: 32px;
+    }
+    .campus-stat {
+      text-align: center; background: var(--white); border-radius: var(--radius);
+      padding: 24px 12px; box-shadow: var(--shadow);
+      border-bottom: 3px solid var(--gold);
+    }
+    .campus-stat .num {
+      font-size: 1.8rem; font-weight: 900; color: var(--red);
+    }
+    .campus-stat .label {
+      font-size: 0.82rem; color: var(--text-light); margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .campus-grid { grid-template-columns: 1fr; }
+      .campus-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ===== Honors ===== */
+    .honors-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .honor-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 24px 20px; box-shadow: var(--shadow);
+      border-left: 4px solid var(--red);
+      transition: all 0.3s;
+    }
+    .honor-card:hover {
+      box-shadow: var(--shadow-hover); transform: translateY(-3px);
+    }
+    .honor-card .tag {
+      display: inline-block; padding: 2px 10px; border-radius: 8px;
+      font-size: 0.72rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .honor-card .tag.national { background: var(--red); color: var(--white); }
+    .honor-card .tag.province { background: var(--gold); color: var(--white); }
+    .honor-card .tag.municipal { background: #6c757d; color: var(--white); }
+    .honor-card .tag.new-badge {
+      background: #28a745; color: var(--white); margin-left: 4px;
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+    @keyframes pulse-badge {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .honor-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+    .honor-card p { font-size: 0.82rem; color: var(--text-light); }
+
+    /* ===== Achievements ===== */
+    .achievement-highlights {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+      margin-bottom: 48px;
+    }
+    .achievement-highlight {
+      text-align: center; background: var(--white); border-radius: var(--radius);
+      padding: 32px 16px; box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+    .achievement-highlight:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .achievement-highlight .num {
+      font-size: 2.2rem; font-weight: 900; color: var(--red);
+    }
+    .achievement-highlight .num small { font-size: 1rem; font-weight: 400; color: var(--text-light); }
+    .achievement-highlight .label {
+      font-size: 0.88rem; color: var(--text-light); margin-top: 4px;
+    }
+    .achievement-list {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px; box-shadow: var(--shadow);
+    }
+    .achievement-list h3 {
+      font-size: 1.1rem; color: var(--red); margin-bottom: 16px;
+      padding-bottom: 8px; border-bottom: 2px solid var(--cream-dark);
+    }
+    .achievement-list ul li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      font-size: 0.92rem;
+      border-bottom: 1px solid #f5f0e8;
+    }
+    .achievement-list ul li:last-child { border-bottom: none; }
+    .achievement-list ul li::before {
+      content: '★'; position: absolute; left: 0;
+      color: var(--gold); font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .achievement-highlights { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ===== Campus Life ===== */
+    .life-intro {
+      max-width: 800px; margin: 0 auto 40px;
+      text-align: center;
+      font-size: 1rem; color: var(--text-light); line-height: 1.9;
+    }
+    .life-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .life-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 28px 24px; box-shadow: var(--shadow);
+      border-bottom: 3px solid var(--red);
+      transition: all 0.3s;
+    }
+    .life-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .life-card .icon {
+      font-size: 2rem; margin-bottom: 12px;
+    }
+    .life-card h4 { font-size: 1.05rem; color: var(--red); margin-bottom: 8px; }
+    .life-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; }
+    .life-card ul {
+      margin-top: 8px;
+    }
+    .life-card ul li {
+      padding: 3px 0 3px 18px;
+      font-size: 0.85rem; color: var(--text-light);
+      position: relative;
+    }
+    .life-card ul li::before {
+      content: '·'; position: absolute; left: 0;
+      color: var(--gold); font-weight: 900; font-size: 1.2rem;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      color: var(--white); text-align: center;
+      padding: 60px 24px 32px;
+    }
+    .footer-quote {
+      max-width: 600px; margin: 0 auto 32px;
+      font-size: 1.1rem; line-height: 1.8;
+      font-style: italic; opacity: 0.9;
+    }
+    .footer-quote .source {
+      display: block; margin-top: 8px;
+      font-size: 0.85rem; opacity: 0.6; font-style: normal;
+    }
+    .footer-links {
+      display: flex; justify-content: center; gap: 24px;
+      margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .footer-links a {
+      padding: 8px 20px; border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.88rem; transition: all 0.25s;
+    }
+    .footer-links a:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--gold-light); color: var(--gold-light);
+    }
+    .footer-copy {
+      font-size: 0.8rem; opacity: 0.5;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+    }
+
+    /* ===== Back to Top ===== */
+    .back-to-top {
+      position: fixed; bottom: 36px; right: 36px;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--white);
+      border: 2px solid var(--gold);
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover {
+      background: var(--red-dark);
+      transform: scale(1.1);
+    }
+
+    /* ===== Responsive Helpers ===== */
+    @media (max-width: 480px) {
+      .section { padding: 64px 16px; }
+      .section-title { font-size: 1.5rem; }
+      .hero-crest { width: 64px; height: 64px; font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav-logo">
+        <div class="crest">高</div>
+        <span>平顶山市一高</span>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#hero">首页</a>
+        <a href="#timeline">发展历程</a>
+        <a href="#campus">新校区</a>
+        <a href="#honors">办学荣誉</a>
+        <a href="#achievements">桃李成果</a>
+        <a href="#life">校园生活</a>
+        <a href="#footer">寄语</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== Section 1: Hero ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-crest">一高</div>
+      <h1>平顶山市第一高级中学</h1>
+      <p class="motto">好 学 力 行 · 崇 尚 一 流</p>
+      <div class="hero-badge">🏫 白龟湖畔 · 未来大道校区</div>
+      <p>
+        始建于1961年，河南省首批示范性高中。2022年8月整体搬迁至白龟湖畔200亩现代化新校区，<br>
+        投资近3亿元，以「六年一贯制」公办寄宿制模式，开启鹰城基础教育高质量发展的崭新篇章。
+      </p>
+    </div>
+    <div class="hero-scroll">
+      <span>向下探索</span>
+      <span class="arrow">⌄</span>
+    </div>
+  </section>
+
+  <!-- ===== Section 2: Timeline ===== -->
+  <section class="section" id="timeline">
+    <h2 class="section-title reveal">发展历程</h2>
+    <p class="section-subtitle reveal">从矿工路到白龟湖，六十余载薪火相传</p>
+    <div class="timeline">
+
+      <!-- 1961 -->
+      <div class="timeline-item reveal">
+        <div class="dot"></div>
+        <div class="card">
+          <div class="year">1961</div>
+          <div class="title">建校立业</div>
+          <div class="desc">平顶山市第一高级中学肇基于1961年，是平顶山市成立最早的完全中学之一，为全市基础教育奠基。</div>
+        </div>
+      </div>
+
+      <!-- 矿工路老校区 -->
+      <div class="timeline-item reveal">
+        <div class="dot"></div>
+        <div class="card">
+          <div class="year">1961 — 2022</div>
+          <div class="title">矿工路校区时代</div>
+          <div class="desc">学校坐落于矿工路，在老校区六十余年间积累了深厚的办学底蕴，培养了数万名优秀学子，奠定了鹰城名校的坚实根基。</div>
+        </div>
+      </div>
+
+      <!-- 省示范高中 -->
+      <div class="timeline-item reveal">
+        <div class="dot"></div>
+        <div class="card">
+          <div class="year">2005</div>
+          <div class="title">获评河南省首批示范性高中</div>
+          <div class="desc">经河南省教育厅严格评估，学校被认定为「河南省首批示范性普通高中」，办学质量跻身全省第一梯队。</div>
+        </div>
+      </div>
+
+      <!-- 2022 搬迁（重点） -->
+      <div class="timeline-item highlight reveal">
+        <div class="dot"></div>
+        <div class="card">
+          <div class="year" style="color:var(--gold-dark);">2022 · 里程碑</div>
+          <div class="title">🎯 整体搬迁至白龟湖新校区</div>
+          <div class="desc">
+            <strong>2022年8月</strong>，学校从矿工路老校区整体迁入城乡一体化示范区白龟湖畔未来大道校区。新校区占地<strong>200亩</strong>，投资近<strong>3亿元</strong>，校园面积扩大4倍。新建教学楼6栋、实验楼、科技楼、体育馆、标准运动场等一流设施，办学空间实现历史性跨越。
+          </div>
+        </div>
+      </div>
+
+      <!-- 2023-2024 -->
+      <div class="timeline-item reveal">
+        <div class="dot"></div>
+        <div class="card">
+          <div class="year">2024</div>
+          <div class="title">办学成果集中涌现</div>
+          <div class="desc">
+            一本上线率大幅跃升至92%+，创新实验班一本率保持100%；获评河南省历史学科一级学科基地、数学学科二级学科基地、省人文特色高中、省党建工作示范校等多项省级重磅荣誉。
+          </div>
+        </div>
+      </div>
+
+      <!-- 2025-2026 -->
+      <div class="timeline-item reveal">
+        <div class="dot"></div>
+        <div class="card">
+          <div class="year">2025 — 2026</div>
+          <div class="title">锚定「科学高中」创建目标</div>
+          <div class="desc">
+            围绕「科学高中」定位深化课程改革，完善「人文与科学相融并进」的育人体系。成功举办科学文化节、英语文化艺术节等品牌活动，常态化开展高校协同育人、跨学科融合教学，学校综合实力与区域影响力持续攀升。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Section 3: Campus ===== -->
+  <section class="section" id="campus">
+    <h2 class="section-title reveal">校区对比</h2>
+    <p class="section-subtitle reveal">从50亩到200亩——一次跨越时代的校址升级</p>
+
+    <div class="campus-grid">
+      <!-- Old Campus -->
+      <div class="campus-card old reveal">
+        <div class="badge">📌 矿工路老校区</div>
+        <h3>峥嵘岁月 · 六十余载根基</h3>
+        <ul>
+          <li>位于矿工路，占地约50亩</li>
+          <li>办学空间相对紧凑，硬件设施随时代渐显局限</li>
+          <li>1961年至2022年在此办学，累计培养数万名毕业生</li>
+          <li>见证了学校从初创到省级示范高中的光辉历程</li>
+        </ul>
+      </div>
+
+      <!-- New Campus -->
+      <div class="campus-card new reveal">
+        <div class="badge">🌟 白龟湖新校区 · 2022年启用</div>
+        <h3>一湖一校 · 现代化教育新地标</h3>
+        <ul>
+          <li>位于城乡一体化示范区白龟湖畔未来大道</li>
+          <li><strong>占地面积200亩</strong>，较老校区扩大4倍</li>
+          <li>总投资近<strong>3亿元</strong>，高标准规划建设</li>
+          <li>教学楼6栋、实验楼1栋、科技楼1栋、宿舍楼4栋</li>
+          <li>食堂楼2栋、<strong>1300座位</strong>多功能报告厅</li>
+          <li>体育馆（可承办国家级篮球比赛）、标准400米运动场</li>
+          <li>教室配纳米智慧黑板、智能语音系统，全校园覆盖暖气和24小时热水</li>
+          <li>108个教学班（高中66班+初中42班），初高中在校生<strong>6587人</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="campus-stats reveal">
+      <div class="campus-stat">
+        <div class="num">200<span style="font-size:0.9rem;color:var(--text-light);">亩</span></div>
+        <div class="label">新校区占地</div>
+      </div>
+      <div class="campus-stat">
+        <div class="num">≈3<span style="font-size:0.9rem;color:var(--text-light);">亿元</span></div>
+        <div class="label">总投资规模</div>
+      </div>
+      <div class="campus-stat">
+        <div class="num">108<span style="font-size:0.9rem;color:var(--text-light);">个</span></div>
+        <div class="label">教学班总量</div>
+      </div>
+      <div class="campus-stat">
+        <div class="num">6587<span style="font-size:0.9rem;color:var(--text-light);">人</span></div>
+        <div class="label">在校生总数</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 4: Honors ===== -->
+  <section class="section" id="honors">
+    <h2 class="section-title reveal">办学荣誉</h2>
+    <p class="section-subtitle reveal">国家级、省级权威认定，搬迁新校区后多项荣誉新增</p>
+
+    <div class="honors-grid">
+      <!-- National -->
+      <div class="honor-card reveal">
+        <div class="tag national">🏅 国家级</div>
+        <h4>全国未成年人思想道德建设先进单位</h4>
+        <p>学校德育工作的最高国家级认可</p>
+      </div>
+
+      <!-- Provincial Core -->
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>河南省首批示范性普通高中</h4>
+        <p>2005年获评，河南省教育厅权威认定</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>省级文明校园（标兵）</h4>
+        <p>连续多年保持省级文明单位称号</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>河南省党建工作示范校</h4>
+        <p><span class="tag new-badge">搬迁后新增</span> 党建引领教育高质量发展的典范</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>河南省人文特色高中</h4>
+        <p><span class="tag new-badge">搬迁后新增</span> 人文涵养与科学探究融合的特色定位</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>河南省历史学科一级学科基地</h4>
+        <p><span class="tag new-badge">搬迁后新增</span> 全省历史学科建设的引领者</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>河南省数学学科二级学科基地</h4>
+        <p><span class="tag new-badge">搬迁后新增</span> 数学学科教研实力获省级认定</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>河南省普通高中课程改革先进单位</h4>
+        <p>课程改革与"学本课堂"实践的省级肯定</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>普通高中新课程新课标实施省级示范校</h4>
+        <p>新课程改革的先行先试单位</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>河南省教育科研基地（2020年入选）</h4>
+        <p>教育科研创新与实践的前沿阵地</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>省级卫生先进单位 · 省级绿色学校</h4>
+        <p>生态校园、健康校园建设的标杆</p>
+      </div>
+
+      <div class="honor-card reveal">
+        <div class="tag province">🏆 省级</div>
+        <h4>高校"四新"教育协同育人试点学校</h4>
+        <p><span class="tag new-badge">搬迁后新增</span> 新工科·新医科·新农科·新文科协同育人</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 5: Achievements ===== -->
+  <section class="section" id="achievements">
+    <h2 class="section-title reveal">桃李成果</h2>
+    <p class="section-subtitle reveal">搬迁新校区后，教育教学质量实现跨越式提升</p>
+
+    <div class="achievement-highlights reveal">
+      <div class="achievement-highlight">
+        <div class="num">92%<small>+</small></div>
+        <div class="label">2023年一本上线率</div>
+      </div>
+      <div class="achievement-highlight">
+        <div class="num">100<span style="font-size:1.2rem;color:var(--text-light);">%</span></div>
+        <div class="label">创新实验班一本率</div>
+      </div>
+      <div class="achievement-highlight">
+        <div class="num">1143<span style="font-size:1.2rem;color:var(--text-light);">人</span></div>
+        <div class="label">2023年一本上线人数</div>
+      </div>
+      <div class="achievement-highlight">
+        <div class="num">8<span style="font-size:1.2rem;color:var(--text-light);">人/届</span></div>
+        <div class="label">清北录取预估</div>
+      </div>
+    </div>
+
+    <div class="achievement-list reveal">
+      <h3>📚 近年高考成绩（2022年搬迁后）</h3>
+      <ul>
+        <li><strong>2023年高考</strong>：普通类报考1238人，一本上线1143人，一本上线率<strong>92.32%</strong>（文科90.45%，理科92.87%），较2022年搬迁前（41.2%）实现跨越式提升</li>
+        <li><strong>创新实验班</strong>：一本上线率连续多年保持<strong>100%</strong>，双一流院校录取人数逐年攀升</li>
+        <li><strong>清北录取</strong>：先后有张朝杰、赵晓东、双红莹、史松源、王倩、楚明明、周喜讯、葛曙光、尚晓通等多名学子考入清华大学、北京大学</li>
+        <li><strong>学科竞赛</strong>：在数学、物理、化学、生物等奥林匹克竞赛中屡获省级一等奖及以上奖项，搬迁后新校区实验室条件改善进一步助力竞赛成绩提升</li>
+        <li><strong>综合素质</strong>：科学文化节、语文话剧节、英语文化节等品牌活动培育的学生在高校强基计划、综合评价招生中表现优异</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Section 6: Campus Life ===== -->
+  <section class="section" id="life">
+    <h2 class="section-title reveal">校园生活 · 2026</h2>
+    <p class="section-subtitle reveal">六年一贯 · 五育并举 · 科学高中 · 全面育人</p>
+
+    <div class="life-intro reveal">
+      <p>
+        搬迁至白龟湖新校区后，学校围绕「科学高中」创建目标，构建起人文与科学相融并进的育人体系。
+        现有教职工<strong>416人</strong>（正高级教师4人、高级教师100余人、省级以上骨干教师80余人），
+        以「六年一贯制」融合教学模式，打通初高中学段壁垒，培养兼具人文情怀与科学素养的时代新人。
+      </p>
+    </div>
+
+    <div class="life-grid">
+
+      <div class="life-card reveal">
+        <div class="icon">📖</div>
+        <h4>六年一贯制融合教学</h4>
+        <p>从授课内容、思维训练、能力培养到习惯养成，实现初高中无缝衔接。构建"三级五翼"课程体系，开发20余种校本教材，学生高一入学即可快速适应高中学习节奏。</p>
+      </div>
+
+      <div class="life-card reveal">
+        <div class="icon">🔬</div>
+        <h4>科学文化节 · 品牌活动</h4>
+        <p>
+          2026年4月，以"文以载道，科以求真"为主题的科学文化节盛大启幕。涵盖机器狗展演、物理火箭发射、化学趣味实验、地理模型展、生物细胞模型制作等数十项活动，特邀高校教授开设前沿讲座。
+        </p>
+        <ul>
+          <li>地理：中国地图绘图大赛、拼图大赛、地球日手抄报</li>
+          <li>生物：叶脉书签DIY、植物标本展、DNA模型制作</li>
+          <li>化学：紫甘蓝变色魔术、防火材料对比实验</li>
+          <li>艺术：主题画展、非遗剪纸、钧瓷手作体验</li>
+        </ul>
+      </div>
+
+      <div class="life-card reveal">
+        <div class="icon">👨‍🏫</div>
+        <h4>卓越师资 · 教研引领</h4>
+        <p>
+          全校教职工416人，其中正高级教师4人、高级教师100余人、
+          中原名师1人、省级以上骨干教师80余人。
+          以"学本课堂"和"深度学习"理念指导教学，常态化开展跨学科教研与高校协同研修。
+        </p>
+      </div>
+
+      <div class="life-card reveal">
+        <div class="icon">🏡</div>
+        <h4>精细化寄宿管理</h4>
+        <p>
+          全新4栋宿舍楼，配备暖气和24小时热水，专职宿管团队24小时值守。
+          食堂楼2栋，明厨亮灶、营养配餐。校园安防系统全覆盖，班主任+生活导师双轨管理，
+          打造安全、温馨、有序的寄宿成长环境。
+        </p>
+      </div>
+
+      <div class="life-card reveal">
+        <div class="icon">🎭</div>
+        <h4>五育并举 · 多元成长</h4>
+        <p>
+          德育：模拟法庭、五四合唱、法治教育专题<br>
+          智育：学科竞赛、高校研学、跨学科项目<br>
+          体育：标准运动场、体育馆、常态化体育赛事<br>
+          美育：书法大赛、国画水彩画展、话剧展演<br>
+          劳动：非遗体验、钧瓷制作、校园种植实践
+        </p>
+      </div>
+
+      <div class="life-card reveal">
+        <div class="icon">🎯</div>
+        <h4>课改理念 · 科学高中</h4>
+        <p>
+          锚定"科学高中"创建目标，完善"人文与科学相融并进"育人体系。
+          推进"学本课堂"教学改革，以"深度学习"为核心，以"三级五翼"课程为骨架，
+          打通高校、企业与中学协同育人通道，培育勇于创新、堪当大任的时代新人。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Section 7: Footer ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer-quote reveal">
+      "在白龟湖畔的晨光里，我们相信：每一粒种子都会发芽，每一个梦想都能开花。<br>
+      愿从这里走出去的每一个你，都带着一高人的底气与光芒。"
+      <span class="source">—— 平顶山市第一高级中学 · 学子寄语</span>
+    </div>
+    <div class="footer-links reveal">
+      <a href="https://pdsyg.cn" target="_blank" rel="noopener noreferrer">🏛 学校官方网站</a>
+      <a href="https://www.pds.gov.cn" target="_blank" rel="noopener noreferrer">📋 平顶山市政府</a>
+      <a href="https://gaokao.chsi.com.cn" target="_blank" rel="noopener noreferrer">📚 阳光高考平台</a>
+      <a href="#hero">↑ 返回首页</a>
+    </div>
+    <div class="footer-copy">
+      <p>© 2026 平顶山市第一高级中学 · 纪念专题页</p>
+      <p style="margin-top:4px;">内容依据 pdsyg.cn 官网、平顶山市政府公示、阳光高考官方档案整理</p>
+      <p style="margin-top:4px;">本页仅作纪念展示，非学校官方网站</p>
+    </div>
+  </footer>
+
+  <!-- ===== Back to Top ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="返回顶部">↑</button>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    (function() {
+
+      /* ----- Particles for Hero ----- */
+      (function initParticles() {
+        var container = document.getElementById('particles');
+        if (!container) return;
+        var count = 40;
+        for (var i = 0; i < count; i++) {
+          var span = document.createElement('span');
+          var size = Math.random() * 4 + 2;
+          span.style.width = size + 'px';
+          span.style.height = size + 'px';
+          span.style.left = Math.random() * 100 + '%';
+          span.style.bottom = '-' + size + 'px';
+          span.style.animationDuration = (Math.random() * 15 + 10) + 's';
+          span.style.animationDelay = (Math.random() * 10) + 's';
+          span.style.opacity = Math.random() * 0.5 + 0.1;
+          container.appendChild(span);
+        }
+      })();
+
+      /* ----- Scroll Reveal (Intersection Observer) ----- */
+      var revealElements = document.querySelectorAll('.reveal');
+      if (revealElements.length) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(function(el) { observer.observe(el); });
+      }
+
+      /* ----- Header Hide/Show on Scroll ----- */
+      var header = document.getElementById('header');
+      var lastScrollY = 0;
+      if (header) {
+        window.addEventListener('scroll', function() {
+          var currentY = window.scrollY;
+          if (currentY > 120) {
+            header.classList.toggle('hidden', currentY > lastScrollY);
+          } else {
+            header.classList.remove('hidden');
+          }
+          lastScrollY = currentY;
+        }, { passive: true });
+      }
+
+      /* ----- Navigation Active Link ----- */
+      var navLinks = document.querySelectorAll('.nav-links a');
+      if (navLinks.length) {
+        var sections = {};
+        document.querySelectorAll('section[id], footer[id]').forEach(function(s) {
+          sections[s.id] = s;
+        });
+        window.addEventListener('scroll', function() {
+          var scrollY = window.scrollY + 120;
+          var currentId = '';
+          for (var id in sections) {
+            var el = sections[id];
+            if (el.offsetTop <= scrollY) {
+              currentId = id;
+            }
+          }
+          navLinks.forEach(function(a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+          });
+        }, { passive: true });
+      }
+
+      /* ----- Mobile Menu Toggle ----- */
+      var menuBtn = document.getElementById('menuToggle');
+      var navMenu = document.getElementById('navLinks');
+      if (menuBtn && navMenu) {
+        menuBtn.addEventListener('click', function() {
+          navMenu.classList.toggle('open');
+        });
+        navMenu.addEventListener('click', function() {
+          navMenu.classList.remove('open');
+        });
+      }
+
+      /* ----- Back to Top Button ----- */
+      var btn = document.getElementById('backToTop');
+      if (btn) {
+        window.addEventListener('scroll', function() {
+          btn.classList.toggle('visible', window.scrollY > 400);
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
